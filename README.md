@@ -97,7 +97,7 @@ Webhooks are tested locally using Stripe CLI
 📹 Demo
 
 A demo video is included showing:
-
+https://www.loom.com/share/22f4a3b8b4af4e43929b73b8a7ebd4c0
 Product listing
 
 Add to cart
