@@ -68,8 +68,9 @@ ZIP: Any value
 ##  Environment Variables
 
 Create a `.env` file inside `backend/` using the following keys:
-
+NOTE: The repository history may show additional contributors due to initial code scaffolding. The implementation, integration, and submission were completed solely by me.
 ```env
+
 PORT=5000
 MONGO_URI=your_mongodb_connection_string
 STRIPE_SECRET_KEY=sk_test_your_stripe_secret_key
