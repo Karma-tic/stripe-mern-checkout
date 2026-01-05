@@ -6,9 +6,9 @@ This project demonstrates a complete payment flow using **Stripe Test Mode**, in
 
 ---
 
-## ✨ Features
+## Features
 
-### 🛍️ Frontend (React + Vite)
+### Frontend (React + Vite)
 - Ecommerce-style product listing (mock data)
 - Product images with search functionality
 - Add to Cart functionality
@@ -18,7 +18,7 @@ This project demonstrates a complete payment flow using **Stripe Test Mode**, in
 - Redirect to Stripe Checkout
 - Success and Cancel pages
 
-### 🔧 Backend (Node.js + Express)
+###  Backend (Node.js + Express)
 - Stripe Checkout Session creation
 - Orders stored in MongoDB
 - Order status lifecycle:
@@ -30,7 +30,7 @@ This project demonstrates a complete payment flow using **Stripe Test Mode**, in
 
 ---
 
-## 🧠 Payment Flow (How it works)
+## Payment Flow (How it works)
 
 1. User adds products to cart
 2. User proceeds to checkout and enters email
@@ -42,7 +42,7 @@ This project demonstrates a complete payment flow using **Stripe Test Mode**, in
 
 ---
 
-## 🧪 Stripe Test Cards
+##  Stripe Test Cards
 
 Use these test cards in **Stripe Test Mode**:
 
@@ -55,7 +55,7 @@ ZIP: Any value
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Frontend**: React, Vite, React Router
 - **Backend**: Node.js, Express
@@ -65,7 +65,7 @@ ZIP: Any value
 
 ---
 
-## ⚙️ Environment Variables
+##  Environment Variables
 
 Create a `.env` file inside `backend/` using the following keys:
 
@@ -75,7 +75,7 @@ MONGO_URI=your_mongodb_connection_string
 STRIPE_SECRET_KEY=sk_test_your_stripe_secret_key
 STRIPE_WEBHOOK_SECRET=whsec_your_webhook_secret
 
-▶️ How to Run Locally
+ How to Run Locally
 Backend
 cd backend
 npm install
@@ -86,7 +86,7 @@ cd frontend
 npm install
 npm run dev
 
-📌 Notes
+ Notes
 
 This project uses Stripe Test Mode only
 
@@ -94,16 +94,17 @@ No real payments are processed
 
 Webhooks are tested locally using Stripe CLI
 
-📹 Demo
+ Demo
 
 A demo video is included showing:
-https://www.loom.com/share/22f4a3b8b4af4e43929b73b8a7ebd4c0
+https://www.loom.com/share/3448ab9fccbb472aaea3ea62132aa213
 Product listing
 
-Add to cart
-
-Checkout
-
-Stripe payment
-
-Order status update via webhook
+0:00
+Introduction to E-commerce App
+1:40
+Product Catalog Features
+3:10
+Checkout Process
+6:40
+Order Tracking and Management
