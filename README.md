@@ -2,8 +2,6 @@
 <p align="center"> <img src="https://img.shields.io/badge/Status-Completed-success?style=for-the-badge" /> <img src="https://img.shields.io/badge/Stack-MERN-blue?style=for-the-badge" /> <img src="https://img.shields.io/badge/Payments-Stripe-635bff?style=for-the-badge" /> <img src="https://img.shields.io/badge/Architecture-MVC-important?style=for-the-badge" /> </p> <p align="center"> <b>A clean, real-world MERN stack e-commerce checkout application using Stripe Checkout & Webhooks.</b> </p>
 ✨ Project Preview (GIF Demos)
 
-🎥 Short demos showing the complete payment flow
-
 🛍️ Product Listing & Add to Cart
 
 🛒 Cart Management & Checkout
@@ -11,8 +9,6 @@
 💳 Stripe Checkout Flow
 
 ✅ Payment Success & ❌ Failure Handling
-
-📌 Replace the GIF URLs above with your recorded screen GIFs (ScreenToGif / Kap / Peek)
 
 🚀 Project Overview
 
