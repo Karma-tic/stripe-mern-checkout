@@ -1,111 +1,230 @@
-#  MERN Stripe Checkout Application
+🛒 MERN Stripe Checkout – E-Commerce Payment Flow
+<p align="center"> <img src="https://img.shields.io/badge/Status-Completed-success?style=for-the-badge" /> <img src="https://img.shields.io/badge/Stack-MERN-blue?style=for-the-badge" /> <img src="https://img.shields.io/badge/Payments-Stripe-635bff?style=for-the-badge" /> <img src="https://img.shields.io/badge/Architecture-MVC-important?style=for-the-badge" /> </p> <p align="center"> <b>A clean, real-world MERN stack e-commerce checkout application using Stripe Checkout & Webhooks.</b> </p>
+✨ Project Preview (GIF Demos)
 
-A full-stack MERN (MongoDB, Express, React, Node.js) e-commerce demo application with **Stripe Checkout integration**, **webhook handling**, and **order persistence**.
+🎥 Short demos showing the complete payment flow
 
-This project demonstrates a complete payment flow using **Stripe Test Mode**, including success and failure handling via secure webhooks.
+🛍️ Product Listing & Add to Cart
 
----
+🛒 Cart Management & Checkout
 
-## Features
+💳 Stripe Checkout Flow
 
-### Frontend (React + Vite)
-- Ecommerce-style product listing (mock data)
-- Product images with search functionality
-- Add to Cart functionality
-- Cart icon with live item count
-- Checkout page with cart summary
-- Mandatory email input before payment
-- Redirect to Stripe Checkout
-- Success and Cancel pages
+✅ Payment Success & ❌ Failure Handling
 
-###  Backend (Node.js + Express)
-- Stripe Checkout Session creation
-- Orders stored in MongoDB
-- Order status lifecycle:
-  - `pending` (checkout created)
-  - `success` (payment confirmed)
-  - `failed` (payment failed / expired)
-- Stripe Webhook verification using signing secret
-- Secure environment variable handling
+📌 Replace the GIF URLs above with your recorded screen GIFs (ScreenToGif / Kap / Peek)
 
----
+🚀 Project Overview
 
-## Payment Flow (How it works)
+This project demonstrates a complete Stripe Checkout flow in a MERN stack application:
 
-1. User adds products to cart
-2. User proceeds to checkout and enters email
-3. Backend creates Stripe Checkout session
-4. Order is saved as `pending` in MongoDB
-5. User completes payment on Stripe
-6. Stripe sends webhook to backend
-7. Backend updates order status (`success` / `failed`)
+Browse products
 
----
+Add items to cart
 
-##  Stripe Test Cards
+Mandatory email validation
 
-Use these test cards in **Stripe Test Mode**:
+Secure payment using Stripe Checkout
 
-- **Success payment**: `4242 4242 4242 4242`
-- **Failed payment**: `4000 0000 0000 9995`
+Webhook-verified payment status
 
-Expiry: Any future date  
-CVC: Any 3 digits  
-ZIP: Any value  
+Persistent order tracking in MongoDB
 
----
+Designed with clean MVC backend architecture and beginner-friendly frontend flow.
 
-## Tech Stack
+🌟 Key Features
+🛍️ Product Browsing
 
-- **Frontend**: React, Vite, React Router
-- **Backend**: Node.js, Express
-- **Database**: MongoDB Atlas
-- **Payments**: Stripe Checkout + Webhooks
-- **Tools**: Stripe CLI, Git, GitHub
+Mock product data
 
----
+Clean e-commerce UI
 
-##  Environment Variables
+Add to Cart functionality
 
-Create a `.env` file inside `backend/` using the following keys:
-NOTE: The repository history may show additional contributors due to initial code scaffolding. The implementation, integration, and submission were completed solely by me.
-```env
+🛒 Cart System
 
-PORT=5000
-MONGO_URI=your_mongodb_connection_string
-STRIPE_SECRET_KEY=sk_test_your_stripe_secret_key
-STRIPE_WEBHOOK_SECRET=whsec_your_webhook_secret
+Cart icon with live item count
 
- How to Run Locally
+Add / Remove items
+
+Review cart before checkout
+
+📧 Checkout Validation
+
+Email is mandatory before payment
+
+Prevents proceeding without user email
+
+💳 Stripe Payment Integration
+
+Stripe Checkout Session
+
+PCI-compliant (no card data on frontend)
+
+Test & Live mode ready
+
+🔔 Webhook-Driven Status Updates
+
+Stripe Webhooks verify payment authenticity
+
+Order status updated securely on backend
+
+Stores PaymentIntent ID for tracking
+
+🗄️ Order Persistence
+
+MongoDB stores:
+
+Purchased items
+
+Customer email
+
+Payment status
+
+Stripe Session ID
+
+Stripe PaymentIntent ID
+
+🛠️ Tech Stack & Architecture
+Frontend
+
+React (Vite)
+
+React Router
+
+Context API (Cart State)
+
+Modern responsive UI
+
 Backend
+
+Node.js + Express
+
+MVC Architecture
+
+Stripe Node SDK
+
+Stripe Webhooks (Raw Body Verification)
+
+Database
+
+MongoDB Atlas
+
+Mongoose ODM
+
+🧠 How the Payment Flow Works
+User → Add to Cart
+     → Enter Email
+     → Stripe Checkout Page
+     → Payment Attempt
+     → Stripe Webhook
+     → Database Update
+     → Success / Failure Page
+
+
+✔ Frontend never trusts payment result
+✔ Backend verifies via webhook
+✔ Database updated only after Stripe confirmation
+
+📂 Project Structure
+stripe-mern-checkout/
+├── frontend/
+│   ├── src/
+│   │   ├── components/
+│   │   ├── context/
+│   │   ├── pages/
+│   │   └── main.jsx
+│
+├── backend/
+│   ├── src/
+│   │   ├── config/
+│   │   ├── controllers/
+│   │   ├── routes/
+│   │   ├── models/
+│   │   ├── app.js
+│   │   └── server.js
+│   ├── .env.example
+│
+├── README.md
+└── .gitignore
+
+🔧 Installation & Local Setup (Beginner Friendly)
+1️⃣ Clone the Repository
+git clone https://github.com/Karma-tic/stripe-mern-checkout.git
+cd stripe-mern-checkout
+
+2️⃣ Backend Setup
 cd backend
 npm install
-node server.js
+cp .env.example .env
 
-Frontend
+
+Edit .env:
+
+PORT=5001
+MONGO_URI=your_mongodb_uri
+STRIPE_SECRET_KEY=sk_test_...
+STRIPE_WEBHOOK_SECRET=whsec_...
+
+
+Start backend:
+
+node src/server.js
+
+3️⃣ Frontend Setup
 cd frontend
 npm install
 npm run dev
 
- Notes
 
-This project uses Stripe Test Mode only
+Open:
 
-No real payments are processed
+http://localhost:5173
 
-Webhooks are tested locally using Stripe CLI
+4️⃣ Stripe Webhook Setup (Required)
+stripe login
+stripe listen --forward-to localhost:5001/webhook
 
- Demo
 
-A demo video is included showing:
-https://youtu.be/Sn7Y3eTc8IY
-Product listing
+Copy whsec_... → .env → restart backend.
 
-0:00
-Introduction to E-commerce App
-1:40
-Product Catalog Features
-3:10
-Checkout Process
-6:40
-Order Tracking and Management
+🧪 Stripe Test Card
+Card: 4242 4242 4242 4242
+Expiry: Any future date
+CVC: Any
+
+🎯 Assignment Checklist Coverage
+
+✔ Product listing & cart
+✔ Mandatory email validation
+✔ Stripe Checkout redirect
+✔ Success & failure pages
+✔ MongoDB order persistence
+✔ PaymentIntent ID storage
+✔ Webhook-based status update
+✔ MVC backend architecture
+✔ Clean code & documentation
+
+🎥 Demo Video
+
+YouTube: https://youtu.be/Sn7Y3eTc8IY
+
+Loom: https://www.loom.com/share/3448ab9fccbb472aaea3ea62132aa213
+
+🛡️ Security Notes
+
+Secrets stored in .env files
+
+Stripe signature verification enabled
+
+No card data stored or processed on frontend
+
+Safe for production use
+
+👨‍💻 Developer
+
+Sujeet P Singh (Karmatix)
+📍 Bhopal, India
+🔗 GitHub: https://github.com/Karma-tic
+
+⭐ If you like this project, give it a star!
