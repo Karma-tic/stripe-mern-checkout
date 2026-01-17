@@ -32,39 +32,30 @@ Designed with clean MVC backend architecture and beginner-friendly frontend flow
 🛍️ Product Browsing
 
 Mock product data
-
 Clean e-commerce UI
-
 Add to Cart functionality
 
 🛒 Cart System
 
 Cart icon with live item count
-
 Add / Remove items
-
 Review cart before checkout
 
 📧 Checkout Validation
 
 Email is mandatory before payment
-
 Prevents proceeding without user email
 
 💳 Stripe Payment Integration
 
 Stripe Checkout Session
-
 PCI-compliant (no card data on frontend)
-
 Test & Live mode ready
 
 🔔 Webhook-Driven Status Updates
 
 Stripe Webhooks verify payment authenticity
-
 Order status updated securely on backend
-
 Stores PaymentIntent ID for tracking
 
 🗄️ Order Persistence
@@ -72,40 +63,27 @@ Stores PaymentIntent ID for tracking
 MongoDB stores:
 
 Purchased items
-
 Customer email
-
 Payment status
-
 Stripe Session ID
-
 Stripe PaymentIntent ID
 
 🛠️ Tech Stack & Architecture
 Frontend
 
 React (Vite)
-
 React Router
-
 Context API (Cart State)
-
 Modern responsive UI
 
 Backend
 
 Node.js + Express
-
 MVC Architecture
-
 Stripe Node SDK
-
 Stripe Webhooks (Raw Body Verification)
-
 Database
-
 MongoDB Atlas
-
 Mongoose ODM
 
 🧠 How the Payment Flow Works
@@ -210,9 +188,7 @@ Loom: https://www.loom.com/share/3448ab9fccbb472aaea3ea62132aa213
 🛡️ Security Notes
 
 Secrets stored in .env files
-
 Stripe signature verification enabled
-
 No card data stored or processed on frontend
 
 Safe for production use
